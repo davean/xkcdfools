@@ -18,7 +18,7 @@ var xkcd = {
 	latest: null,
 	last: null,
 	cache: {},
-	base: 'http://dynamic.xkcd.com/api-0/jsonp/comic/',
+	base: '//c.xkcd.com/api-0/jsonp/comic/',
 	
 	get: function(num, success, error) {
 		if (num == null) {
@@ -194,7 +194,7 @@ Filesystem = {
 	}},
 	'license.txt': {type:'file', read:function(terminal) {
 		terminal.print($('<p>').html('Client-side logic for Wordpress CLI theme :: <a href="http://thrind.xamai.ca/">R. McFarland, 2006, 2007, 2008</a>'));
-		terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="http://www.chromakode.com/">Chromakode, 2010</a>'));
+		terminal.print($('<p>').html('jQuery rewrite and overhaul :: <a href="//www.chromakode.com/">Chromakode, 2010</a>'));
 		terminal.print();
 		$.each([
 			'This program is free software; you can redistribute it and/or',
@@ -215,10 +215,10 @@ Filesystem = {
 		});
 	}}
 };
-Filesystem['blog'] = Filesystem['blag'] = linkFile('http://blag.xkcd.com');
-Filesystem['forums'] = Filesystem['fora'] = linkFile('http://forums.xkcd.com/');
-Filesystem['store'] = linkFile('http://store.xkcd.com/');
-Filesystem['about'] = linkFile('http://xkcd.com/about/');
+Filesystem['blog'] = Filesystem['blag'] = linkFile('//blag.xkcd.com');
+Filesystem['forums'] = Filesystem['fora'] = linkFile('//forums.xkcd.com/');
+Filesystem['store'] = linkFile('//store.xkcd.com/');
+Filesystem['about'] = linkFile('//xkcd.com/about/');
 TerminalShell.pwd = Filesystem;
 
 TerminalShell.commands['cd'] = function(terminal, path) {
@@ -293,17 +293,17 @@ TerminalShell.commands['rm'] = function(terminal, flags, path) {
 };
 
 TerminalShell.commands['cheat'] = function(terminal) {
-	terminal.print($('<a>').text('*** FREE SHIPPING ENABLED ***').attr('href', 'http://store.xkcd.com/'));
+	terminal.print($('<a>').text('*** FREE SHIPPING ENABLED ***').attr('href', '//store.xkcd.com/'));
 }; 
 
 TerminalShell.commands['reddit'] = function(terminal, num) {
 	num = Number(num);
 	if (num) {
-		url = 'http://xkcd.com/'+num+'/';
+		url = '//xkcd.com/'+num+'/';
 	} else {
 		var url = window.location;
 	}
-	terminal.print($('<iframe src="http://www.reddit.com/static/button/button1.html?width=140&url='+encodeURIComponent(url)+'&newwindow=1" height="22" width="140" scrolling="no" frameborder="0"></iframe>'));
+	terminal.print($('<iframe src="//www.reddit.com/static/button/button1.html?width=140&url='+encodeURIComponent(url)+'&newwindow=1" height="22" width="140" scrolling="no" frameborder="0"></iframe>'));
 };
 
 TerminalShell.commands['wget'] = TerminalShell.commands['curl'] = function(terminal, dest) {
@@ -329,7 +329,7 @@ TerminalShell.commands['irc'] = function(terminal, nick) {
 		$('.irc').slideUp('fast', function() {
 			$(this).remove();
 		});
-		var url = "http://widget.mibbit.com/?server=irc.foonetic.net&channel=%23xkcd";
+		var url = "//widget.mibbit.com/?server=irc.foonetic.net&channel=%23xkcd";
 		if (nick) {
 			url += "&nick=" + encodeURIComponent(nick);
 		}
@@ -340,7 +340,7 @@ TerminalShell.commands['irc'] = function(terminal, nick) {
 };
 
 TerminalShell.commands['unixkcd'] = function(terminal, nick) {
-	TerminalShell.commands['curl'](terminal, "http://www.xkcd.com/unixkcd/");
+	TerminalShell.commands['curl'](terminal, "//www.xkcd.com/unixkcd/");
 };
 
 TerminalShell.commands['apt-get'] = function(terminal, subcmd) {
@@ -563,7 +563,7 @@ TerminalShell.fallback = function(terminal, cmd) {
 		} else if  (cmd == "hint") {
 			terminal.print(randomChoice([
  				'We offer some really nice polos.',
- 				$('<p>').html('This terminal will remain available at <a href="http://xkcd.com/unixkcd/">http://xkcd.com/unixkcd/</a>'),
+ 				$('<p>').html('This terminal will remain available at <a href="//xkcd.com/unixkcd/">xkcd.com/unixkcd/</a>'),
  				'Use the source, Luke!',
  				'There are cheat codes.'
  			]));

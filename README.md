@@ -10,7 +10,7 @@ Use the source, Luke.
 Credits
 -------
 
-* Jokes are by Randall Munroe, Davean Scies, Chromakode, and various contributors from IRC.
+* Jokes are by Randall Munroe, davean scies, Chromakode, and various contributors from IRC.
 
 * Many thanks to [Rod McFarland](http://thrind.xamai.ca/) for his original [CLI2](http://code.google.com/p/wordpress-cli/). The JavaScript CLI implementation in cli.js is a heavily modified version of the CLI2 client-side logic. CLI2 is Copyright © [Rod McFarland](http://thrind.xamai.ca/), 2006, 2007, 2008.
 
